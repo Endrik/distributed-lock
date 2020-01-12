@@ -1,0 +1,18 @@
+spring:
+  datasource:
+       jndi-name: ${DEMO_JUG_JNDI:jdbc/demoJndi}
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle12cDialect
+    hibernate:
+       naming_strategy: org.hibernate.cfg.EJB3NamingStrategy
+    properties:
+             org.hibernate.envers.audit_table_suffix: _LOG
+             org.hibernate.envers.revision_field_name: REVISION_ID 
+             org.hibernate.envers.revision_type_field_name: REVISION_TYPE
+
+server:
+  contextPath: /Distributed-lock
+  port: 8080
+logging:
+      directory: /logs
